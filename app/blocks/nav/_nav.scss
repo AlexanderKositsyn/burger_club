@@ -1,0 +1,44 @@
+.nav {
+  font-family: "ubuntumedium";
+  font-size: 13px;
+  flex: 1 1 auto;
+  text-align: right;
+  &__list {
+    text-transform: uppercase;
+  }
+  &__item {
+    position: relative;
+    display: inline-block;
+    margin-left: 45px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:after {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 4px;
+      height: 4px;
+      background-color: $decor-primary;
+      border-radius: 50%;
+      top: 40%;
+      left: -23.5px;
+    }
+    &:first-child:after {
+      display: none;
+    }
+  }
+  &__link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: $link-primary;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @include tablet {
+    display: none;
+  }
+}

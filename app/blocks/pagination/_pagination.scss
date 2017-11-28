@@ -1,0 +1,41 @@
+.pagination {
+  position: fixed;
+  z-index: 1;
+  top: 14%;
+  right: 4.5%;
+  display: flex;
+  flex-flow: column;
+  &__item {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    &--active {
+      border: solid 1px $link-primary;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:after {
+      cursor: pointer;
+      content: "";
+      width: 6px;
+      height: 6px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -3px;
+      margin-top: -3px;
+      background-color: $link-primary;
+      border-radius: 50%;
+    }
+  }
+  &__link {
+    display: block;
+    height: 100%;
+  }
+  &--active {
+    display: none;
+  }
+}

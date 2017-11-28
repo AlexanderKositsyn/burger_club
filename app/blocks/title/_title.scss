@@ -1,0 +1,28 @@
+.title {
+    font-family: 'gagalinregular';
+    font-size: 72px;
+    line-height: 0.89;
+    color: $title-primary;
+    &--theme--black {
+        color: $title-secondary;
+    }
+    &--margin--centered {
+        margin: 0 auto;
+    }
+    &--we-section {
+        margin-bottom: 8%;
+        flex: 0 1 auto;
+        text-align: center;
+        width: 100%;
+        @include tablet {
+            margin-bottom: 22%;
+        }
+        @include mobile {
+            font-size: 50px;
+            margin-bottom: 16%;
+        }
+    }
+    @include mobile {
+        font-size: 50px;
+    }
+}

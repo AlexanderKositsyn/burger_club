@@ -1,0 +1,42 @@
+.menu-section {
+  width: 100%;
+
+  &__container {
+    width: 100%;
+    padding: 0;
+    position: relative;
+    background-image: url(../img/bg-menu.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include tablet {
+      max-width: initial;
+    }
+  }
+  &__aside {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    height: 100%;
+
+    @include tablet {
+      left: 0;
+    }
+  }
+  &__title {
+    position: absolute;
+    top: 16.8%;
+    left: 8.7%;
+    color: $white;
+    @include tablet {
+      top: 10.8%;
+      left: 2.7%;
+    }
+    @include mobile {
+      top: 6.8%;
+      left: initial;
+      right: 64.4%;
+    }
+  }
+}

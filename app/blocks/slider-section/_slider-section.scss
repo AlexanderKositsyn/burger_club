@@ -1,0 +1,9 @@
+.slider-section {
+    &__container {
+        padding: 0;
+        background-image: linear-gradient(to top, $butterscotch, $dusty-orange 48%, $butterscotch 74%);
+        @include tablet {
+            max-width: initial;
+        }
+    }
+}

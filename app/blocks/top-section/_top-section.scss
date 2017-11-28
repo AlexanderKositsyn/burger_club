@@ -1,0 +1,11 @@
+.top-section {
+  position: relative;
+  background: url("../img/texture.png") center center / cover no-repeat,
+    url("../img/bg-top-section.jpg") center center / cover no-repeat;
+  height: 100%;
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+}

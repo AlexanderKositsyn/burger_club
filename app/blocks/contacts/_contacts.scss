@@ -1,0 +1,21 @@
+.contacts {
+    &__adress {
+        margin-bottom: 10px;
+    }
+    &__phone {
+        @include mobile {
+            text-align: center;
+        }
+    }
+    &__icon {
+        width: 11px;
+        height: 11px;
+        fill: $tomato-two;
+        margin-right: 7px;
+    }
+    &__number {
+        font-family: 'ubuntubold';
+        color: $tomato-two;
+        text-decoration: none;
+    }
+}

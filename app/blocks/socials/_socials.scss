@@ -1,0 +1,26 @@
+.socials {
+    display: inline-block;
+    margin-left: -20px;
+    &__item {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        margin-left: 15px;
+    }
+    &__link {
+        display: block;
+        height: 100%;
+    }
+    &__icon {
+        height: 100%;
+        width: 100%;
+        fill: white;
+        fill: $dark-grey;
+        &:hover {
+            fill: $white;
+        }
+        @include tablet {
+            fill: $brownish-grey;
+        }
+    }
+}

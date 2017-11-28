@@ -1,0 +1,9 @@
+.bottom-arrow {
+    display: block;
+    flex: 0 1 15%;
+    background: url('../img/icons/arrow-scroll.svg') center center no-repeat;
+    @include tablet {
+        margin-top: auto;
+        flex: 0 1 9%;
+    }
+}

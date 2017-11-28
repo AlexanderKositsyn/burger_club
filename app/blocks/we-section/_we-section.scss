@@ -1,0 +1,15 @@
+.we-section {
+    background-image: url("../img/we-bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &__container {
+        display: flex;
+    }
+    @include tablet {
+        background-image: url("../img/bg-tablet-we-section.jpg");
+    }
+    @include mobile {
+        background-image: url("../img/bg-mobile-we-section.jpg");
+    }
+}

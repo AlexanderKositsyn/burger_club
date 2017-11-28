@@ -1,0 +1,152 @@
+.team {
+    padding-top: 15.9%;
+    padding-left: 14.6%;
+    padding-right: 3.7%;
+    padding-bottom: 16.5%;
+    &__title {
+        margin-bottom: 17.2%;
+        @include tablet {
+            text-align: center;
+            margin-bottom: 16.1%;
+        }
+        @include mobile {
+            margin-bottom: 20.3%;
+        }
+    }
+    &__accordeon {
+        padding-left: 4.3%;
+        @include tablet {
+            width: 100%;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            padding: 0;
+        }
+        @include mobile {
+            padding: 0;
+        }
+    }
+    &__accordeon-item {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3.1vh;
+        position: relative;
+        &--active .team__accordeon-info {
+            margin-bottom: 4vh;
+            min-height: 1px;
+            max-height: 1000px;
+            @include tablet {
+                margin-bottom: 3%;
+            }
+            @include mobile {
+                margin-bottom: 6%;
+            }
+        }
+        &--active .team__accordeon-name {
+            color: $title-primary;
+        }
+        &--active .team__accordeon-name:after {
+            transform: rotate(180deg);
+            transition: transform .5s;
+        }
+        @include tablet {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+        @include tablet {
+            margin-bottom: 12px;
+        }
+    }
+    &__accordeon-name {
+        font-family: 'gagalinregular';
+        color: $white;
+        margin-bottom: 2.1vh;
+        position: relative;
+        &:after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 7px solid #f9b43b;
+            position: absolute;
+            top: 5px;
+            left: -20px;
+            @include tablet {
+                top: 11px;
+                left: -23px;
+            }
+        }
+        @include tablet {
+            font-size: 25px;
+            margin-bottom: 2%;
+        }
+        @include mobile {
+            margin-bottom: 4.4%;
+        }
+    }
+    &__accordeon-info {
+        display: flex;
+        max-height: 0px;
+        transition: all 1s;
+        overflow: hidden;
+        @include tablet {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+    &__accordeon-pic {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 50%;
+        @include tablet {
+            margin-bottom: 6%;
+        }
+        @include mobile {
+            margin-bottom: 4%;
+        }
+    }
+    &__accordeon-img {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__accordeon-desc {
+        display: flex;
+        flex-direction: column;
+        margin-left: 3.4vh;
+        flex: 0 1 55%;
+        line-height: 1.71;
+        @include tablet {
+            margin-left: 0;
+            align-items: center;
+        }
+    }
+    &__accordeon-amplua {
+        font-family: 'ubuntubold';
+        margin-bottom: 1.3vh;
+    }
+    &__accordeon-text {
+        @include tablet {
+            width: 88.4%;
+        }
+        @include mobile {
+            width: 70%;
+        }
+    }
+    @include tablet {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-top: 117px;
+    }
+    @include mobile {
+        padding-top: 13%;
+    }
+}

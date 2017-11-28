@@ -1,0 +1,12 @@
+.contacts-section {
+  min-height: 650px;
+  position: relative;
+  &__container {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    @include tablet {
+      max-width: initial;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.we-best {
+    align-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 1 auto;
+    width: 100%;
+    @include tablet {
+        margin-top: 17%;
+    }
+    @include mobile {
+        margin-top: 13%;
+    }
+}

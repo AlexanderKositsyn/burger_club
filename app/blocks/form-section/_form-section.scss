@@ -1,0 +1,24 @@
+.form-section {
+    background: url("../img/bg-texture-form.png") center center / cover no-repeat, url("../img/bg-form.jpg") center center / cover no-repeat;
+    position: relative;
+    &__container {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        @include mobile {
+            justify-content: initial;
+            padding: 2%;
+        }
+    }
+    &__title {
+        text-align: center;
+        margin: 0 auto 8.7%;
+        @include tablet {
+            margin: 3% auto 11.7%;
+        }
+        @include mobile {
+            line-height: 57px;
+            margin: 13% auto 5.9%;
+        }
+    }
+}

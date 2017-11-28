@@ -1,0 +1,14 @@
+.logo {
+    width: 92px;
+    height: 69px;
+    overflow: hidden;
+    display: block;
+    &__img {
+        width: 100%;
+        max-width: 100%;
+    }
+    &--active {
+        position: relative;
+        z-index: 1;
+    }
+}

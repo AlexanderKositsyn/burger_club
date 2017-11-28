@@ -1,0 +1,93 @@
+.menu {
+  display: flex;
+  &__item {
+    width: 80px;
+    flex: 0 1 auto;
+    line-height: 1.71;
+    display: flex;
+    overflow: hidden;
+    transition: width 1s;
+    @include tablet {
+      flex: 0 0 auto;
+    }
+    &--active {
+      width: 621px;
+
+      @include tablet {
+        flex: 1 1 auto;
+        width: 24.8125rem;
+
+        .menu__decs .menu__text {
+          opacity: 1;
+          transition: opacity 0.5s ease-out 1s;
+        }
+      }
+      @include mobile {
+        width: 15.8125rem;
+      }
+    }
+    &--meat {
+      background: url("../img/menu-1.jpg") center center / cover no-repeat;
+    }
+    &--dietary {
+      background: url("../img/menu-2.jpg") center center / cover no-repeat;
+    }
+    &--vegan {
+      background: url("../img/menu-3.jpg") center center / cover no-repeat;
+    }
+  }
+  &__title-wrapper {
+    position: relative;
+    min-width: 80px;
+    background-color: $black--70;
+    display: block;
+  }
+  &__title {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    font-size: 40px;
+    transform-origin: left top;
+    transform: rotate(-90deg) translate(-50%, -50%);
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* Запрещаем перенос строк */
+    overflow: hidden;
+    /* Обрезаем все, что не помещается в область */
+    color: $white;
+    @include tablet {
+      top: 80%;
+      left: 50%;
+    }
+    @include mobile {
+      top: 76%;
+      left: 50%;
+    }
+  }
+  &__decs {
+    flex: 1 0 541px;
+    height: 100%;
+    background-color: $dark-grey-80;
+    padding: 61px 68px 60px 33px;
+
+    @include tablet {
+      flex: 1 0 22.8125rem;
+    }
+    @include mobile {
+      flex: 1 0 8.8125rem;
+      padding: 3.8125rem 0.25rem 3.75rem 0.2625rem;
+    }
+  }
+
+  @include tablet {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  &__text {
+    @include tablet {
+      opacity: 0;
+    }
+  }
+}

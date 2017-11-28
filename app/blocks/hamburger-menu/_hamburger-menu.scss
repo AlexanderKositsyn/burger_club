@@ -1,0 +1,44 @@
+.hamburger-menu {
+  height: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: initial;
+  transition: all 0.5s;
+  background-color: rgba(#2f3233, 0.99);
+  &__list {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 26%;
+  }
+  &__item {
+    position: relative;
+    margin-bottom: 8%;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 48%;
+      top: 200%;
+      width: 5px;
+      height: 5px;
+      background-color: $white;
+      border-radius: 50%;
+    }
+  }
+  &__link {
+    font-family: "ubunturegular";
+    text-decoration: none;
+    font-size: 24px;
+    color: $white;
+  }
+  &--active {
+    display: none;
+    height: 100%;
+    @include tablet {
+      display: initial;
+    }
+  }
+}

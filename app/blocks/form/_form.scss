@@ -1,0 +1,193 @@
+.form {
+  &__wrapper {
+    display: flex;
+    @include tablet {
+      flex-flow: column;
+      padding: 0 124px 0 124px;
+    }
+    @include mobile {
+      padding: 0;
+    }
+  }
+  &__left {
+    flex: 1 1 50%;
+    margin-right: 2.1%;
+    @include tablet {
+      margin-right: 0;
+    }
+  }
+  &__right {
+    flex: 1 1 50%;
+  }
+  &__row {
+    display: flex;
+    margin-bottom: 4.1%;
+    @include mobile {
+      margin-bottom: 26px;
+    }
+  }
+  &__row--justify--center {
+    @include mobile {
+      justify-content: center;
+    }
+  }
+  &__label {
+    flex: 1;
+    margin-right: 4.5%;
+    &:last-child {
+      margin-right: 0;
+    }
+    @include mobile {
+      margin-right: 10px;
+    }
+  }
+  &__label--mobile--hidden {
+    @include mobile {
+      display: none;
+    }
+  }
+  &__label--mobile--margin--zero {
+    @include mobile {
+      margin-right: 0;
+    }
+  }
+  &__input-text {
+    margin-bottom: 5px;
+    white-space: nowrap;
+    /* Запрещаем перенос строк */
+    overflow: hidden;
+    /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis;
+    /* Добавляем многоточие */
+  }
+  &__label-radio {
+    cursor: pointer;
+    margin-right: 20px;
+    display: flex;
+    position: relative;
+    .form__input-text {
+      margin-left: 10px;
+    }
+    .form__input {
+      width: auto;
+      position: absolute;
+      left: -99999px;
+      &:checked + .form__radio-fake:after {
+        opacity: 1;
+      }
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    .form__input-text {
+      margin-bottom: 0;
+    }
+  }
+  &__radio-fake {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    background-color: $white;
+    border-radius: 50%;
+    flex: 0 0 auto;
+    &:after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-color: $button-primary;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+  &__label-nocall {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    flex: 1 1 auto;
+    .form__input-text {
+      margin-left: 10px;
+    }
+    .form__input {
+      width: auto;
+      position: absolute;
+      left: -99999px;
+      &:checked + .form__checkbox-fake:after {
+        opacity: 1;
+      }
+    }
+    .form__input-text {
+      margin-bottom: 0;
+    }
+    @include mobile {
+      flex: 0 1 auto;
+    }
+  }
+  &__checkbox-fake {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    background-color: $white;
+    &:after {
+      content: "";
+      color: $button-primary;
+      position: absolute;
+      top: 6%;
+      left: 59%;
+      opacity: 0;
+      width: 11px;
+      height: 6px;
+      border-bottom: solid 3px currentColor;
+      border-left: solid 3px currentColor;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg) translate(-50%, -50%);
+    }
+  }
+  &__label-radio--cache {
+    flex: 1 1 27%;
+    @include mobile {
+      flex: 0 1 auto;
+    }
+  }
+  &__label-radio--card {
+    flex: 1 1 60%;
+    @include mobile {
+      flex: 0 1 auto;
+    }
+  }
+  &__input {
+    border-radius: 5px;
+    background-color: $white;
+    border: solid 1px #d1cfcb;
+    padding-left: 10px;
+    padding-right: 20px;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    width: 100%;
+    &--comment--big {
+      height: 108px;
+      resize: none;
+    }
+  }
+  &__submit {
+    outline: none;
+    border: transparent;
+    margin-left: 0;
+    cursor: pointer;
+    font-family: "ubuntulight";
+  }
+  &__reset {
+    background-color: transparent;
+    border: transparent;
+    font-family: "ubuntulight";
+    text-transform: none;
+    cursor: pointer;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}

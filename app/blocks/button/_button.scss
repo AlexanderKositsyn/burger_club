@@ -1,0 +1,21 @@
+.button {
+    text-transform: uppercase;
+    display: block;
+    font-family: 'ubuntumedium';
+    padding: 8.4px 13.1px 9.4px 11.3px;
+    border-radius: 5px;
+    background-color: $button-primary;
+    color: $link-primary;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: all .3s;
+    &:hover {
+        background-color: darken($button-primary, 8%);
+    }
+}
+
+.header__button {
+    @include tablet {
+        margin-left: auto;
+    }
+}

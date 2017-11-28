@@ -1,0 +1,275 @@
+.slider {
+  display: flex;
+  height: 100%;
+  position: relative;
+  &__left-button {
+    z-index: 1;
+    background: transparent;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    flex: 1 1 12.5%;
+    @include mobile {
+      position: absolute;
+      width: 40px;
+      height: 100px;
+      left: 0;
+      top: 50%;
+    }
+  }
+  &__left-arrow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: rotate(90deg);
+    fill: $white;
+  }
+  &__wrap {
+    position: relative;
+    flex: 1 1 auto;
+    width: 100%;
+    overflow: hidden;
+  }
+  &__list {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: left 0.5s;
+    display: flex;
+  }
+  &__item {
+    font-size: initial;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    height: 100%;
+    align-items: center;
+    position: relative;
+    flex: 1 0 100%;
+    &--active {
+      top: 0;
+      left: 0;
+    }
+    @include tablet {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &__item-left {
+    flex: 1 1 51%;
+    @include tablet {
+      flex: 0 1 auto;
+    }
+  }
+  &__pic {
+    width: 100%;
+    height: 100%;
+  }
+  &__img {
+    max-width: 100%;
+    width: 100%;
+  }
+  &__composition {
+    display: block;
+    text-decoration: none;
+    color: $white;
+    position: absolute;
+    top: 27%;
+    left: 3%;
+    border-radius: 5px;
+    background-color: $tomato;
+    padding: 12px 22px 10px 22px;
+    &:hover .slider__table {
+      display: block;
+    }
+    @include tablet {
+      top: 12%;
+    }
+  }
+  &__composition-pic {
+    overflow: hidden;
+    width: 46px;
+    height: 44px;
+    margin-bottom: 22%;
+  }
+  &__composition-img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    fill: $white;
+    position: relative;
+  }
+  &__composition-text {
+    font-family: "gagalinregular";
+  }
+  &__kkal {
+    position: absolute;
+    bottom: 27%;
+    left: 3%;
+    @include tablet {
+      bottom: initial;
+      left: initial;
+      top: 13%;
+      right: 3%;
+    }
+  }
+  &__kkal-pic {}
+  &__kkal-img {
+    max-width: 100%;
+    width: 100%;
+    width: 60px;
+    height: 60px;
+    fill: $white;
+  }
+  &__kkal-img-text {
+    position: absolute;
+    font-family: "gagalinregular";
+    font-size: 20px;
+    color: $white-50;
+    top: 34%;
+    left: 21%;
+  }
+  &__kkal-text {
+    font-family: "gagalinregular";
+    text-align: center;
+  }
+  &__item-right {
+    flex: 1 1 49%;
+    padding-bottom: 0;
+    @include tablet {
+      flex: 0 1 auto;
+    }
+  }
+  &__title {
+    color: $white;
+    margin-bottom: 8%;
+    line-height: 0.9;
+    @include tablet {
+      width: 60%;
+      text-align: center;
+      margin: 0 auto 8% auto;
+    }
+  }
+  &__desc {
+    line-height: 1.71;
+    margin-bottom: 4%;
+    @include tablet {
+      width: 80%;
+      text-align: center;
+      margin: 0 auto 4% auto;
+    }
+    @include mobile {
+      width: 95%;
+    }
+  }
+  &__cost {
+    font-family: "gagalinregular";
+    display: inline-block;
+    font-size: 71.9px;
+    letter-spacing: -1.8px;
+    color: $tomato;
+    @include tablet {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin: 0 auto;
+    }
+    @include mobile {
+      width: 80%;
+    }
+  }
+  &__cost-rub {
+    font-size: 30px;
+    letter-spacing: -0.7px;
+  }
+  &__button {
+    display: inline-block;
+    font-size: 14px;
+  }
+  &__right-button {
+    flex: 1 1 12.5%;
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    @include mobile {
+      position: absolute;
+      width: 40px;
+      height: 100px;
+      right: 0;
+      top: 50%;
+    }
+  }
+  &__right-arrow {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: rotate(-90deg);
+    fill: $white;
+  }
+  &__table {
+    display: none;
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 300%;
+    padding: 20% 23% 23% 21%;
+    border-radius: 5px;
+    background-color: $white;
+    color: $black;
+    font-family: "ubuntubold";
+    &:after {
+      content: "";
+      width: 35%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: -35%;
+    }
+  }
+  &__table-list {
+    display: flex;
+    flex-flow: column;
+  }
+  &__table-item {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8%;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__table-pic {
+    flex: 1 1 30%;
+    width: 44px;
+    height: 39px;
+    margin-right: 10%;
+  }
+  &__table-svg {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    &--green {
+      fill: #33c1e3;
+    }
+    &--red {
+      fill: red;
+    }
+    &--yellow {
+      fill: #ffbb00;
+    }
+  }
+  &__table-text {
+    flex: 1 1 50%;
+  }
+  &__table-weight {
+    flex: 1 1 20%;
+    text-align: right;
+  }
+}

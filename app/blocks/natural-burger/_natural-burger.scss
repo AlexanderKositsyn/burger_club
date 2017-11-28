@@ -1,0 +1,71 @@
+.natural-burger {
+  overflow: hidden;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  padding: 0px 0px 6% 2%;
+  &__picture {
+    position: relative;
+    width: 49%;
+    overflow: hidden;
+    flex-shrink: 0;
+    @include mobile {
+      width: 363px;
+      height: 339px;
+    }
+  }
+  &__img {
+    width: 100%;
+    max-width: 100%;
+  }
+  &__text {
+    width: 50%;
+    padding: 6.2% 0px 0px 1.3%;
+    @include tablet {
+      text-align: center;
+      padding: 0;
+      padding-top: 27px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @include mobile {
+      padding-top: 0;
+    }
+  }
+  &__title-do {
+    color: $butterscotch;
+    font-size: 72px;
+    font-family: "gagalinregular";
+    margin-bottom: 4.3%;
+    @include mobile {
+      margin-bottom: 0;
+      padding-top: 34px;
+      font-size: 63px;
+    }
+  }
+  &__title-natural {
+    font-size: 65px;
+    line-height: 0.92;
+    font-family: "lifehackmedium";
+    color: $white;
+    letter-spacing: -2px;
+    @include tablet {
+      width: 89%;
+    }
+    @include mobile {
+      font-size: 44px;
+    }
+  }
+  @include tablet {
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1 1 auto;
+    flex-wrap: initial;
+    flex-direction: column;
+  }
+  @include mobile {
+    padding: 0 0 0 0;
+  }
+}
