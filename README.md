@@ -1,8 +1,6 @@
+# LOftschool's homework burger_club ~~by alex.gorn20~~
 
-LOftschool's homework burger_club ~~by alex.gorn20~~
-=========================================
-
-## Demo: [github-pages](https://alexanderkositsyn.github.io/burger_club/dist "Сайт на github pages")
+## Demo: [host](http://alexburger.ru/ "Сайт на хостинге")
 
 Use steps below to setup this project:
 
@@ -10,4 +8,3 @@ Use steps below to setup this project:
 2. npm i
 3. bower i
 4. gulp
-5.
