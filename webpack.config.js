@@ -23,7 +23,7 @@
 
 module.exports = {
   watch: true,
-  entry: __dirname + "/app/js/main.js",
+  entry: "./app/js/main.js",
   output: {
     filename: "[name].min.js"
   },

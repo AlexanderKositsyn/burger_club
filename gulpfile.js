@@ -1,6 +1,7 @@
 "usestrict";
 
 const gulp = require("gulp"),
+  path = require("path"),
   debug = require("gulp-debug"),
   gutil = require("gulp-util"), // показывает файлы находящиеся в обработке
   ///////////////////////////////////
@@ -167,7 +168,8 @@ gulp.task("minall", function() {
           title: "src"
         })
       )
-      //.pipe(gulpif("*.js", uglify())) // не минифицирует по стандарту es6
+      // из файла index.html выбираем все файлы Js
+      .pipe(gulpif("*.js", uglify())) // не минифицирует по стандарту es6
       .on("error", function(err) {
         gutil.log(gutil.colors.red("[Error]"), err.toString());
       })
