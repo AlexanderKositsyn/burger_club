@@ -1,6 +1,6 @@
 "usestrict";
 
-var gulp = require("gulp"),
+const gulp = require("gulp"),
   debug = require("gulp-debug"),
   gutil = require("gulp-util"), // показывает файлы находящиеся в обработке
   ///////////////////////////////////
@@ -17,6 +17,9 @@ var gulp = require("gulp"),
   ///////////////////////////////////
   ///Build production
   ///////////////////////////////////
+  //для webpack
+  webpack = require("webpack-stream"),
+  ///////////////////////////
   notify = require("gulp-notify"), //уведомления notify
   rimraf = require("gulp-rimraf"), // стирает файлы в папке
   useref = require("gulp-useref"), // объединяет файлы в один файл в продакшене
@@ -102,13 +105,25 @@ gulp.task("svgSpriteBuild", function() {
 ///Work (РАБОТА)
 ///////////////////////////////////
 //Задача по умолчанию
-gulp.task("default", ["server"]);
+gulp.task("default", ["server", "webpackJs"]);
+
+// сборка js и минификация при помощи Webpack
+gulp.task("webpackJs", function() {
+  return gulp
+    .src("./app/js/main.js")
+    .pipe(
+      debug({
+        title: "src"
+      })
+    )
+    .pipe(webpack(require("./webpack.config.js")))
+    .pipe(gulp.dest("app/js/"));
+});
 
 //Препроцессор sass
-
 gulp.task("sass", function() {
   return gulp
-    .src(["app/sass/**/*.scss", "app/blocks/**/*.scss"])
+    .src(["app/sass/**/*.scss"])
     .pipe(sourcemaps.init())
     .pipe(
       sass({
@@ -127,14 +142,6 @@ gulp.task("sass", function() {
     .pipe(browserSync.stream());
 });
 
-//Bower
-gulp.task("wiredep", function() {
-  gulp
-    .src("./app/*.html")
-    .pipe(wiredep())
-    .pipe(gulp.dest("./app/"));
-});
-
 // Сервер
 gulp.task("server", function() {
   browserSync.init({
@@ -142,8 +149,6 @@ gulp.task("server", function() {
   });
 
   gulp.watch("app/sass/**/*.scss", ["sass"]);
-  gulp.watch("app/blocks/**/*.scss", ["sass"]);
-  gulp.watch("bower.json", ["wiredep"]);
   browserSync
     .watch(["app/*.html", "app/**/*.js"])
     .on("change", browserSync.reload);
@@ -152,7 +157,7 @@ gulp.task("server", function() {
 ///////////////////////////////////
 ///Build production  (СБОРКА)
 ///////////////////////////////////
-//Переносим html css js в папку dist
+//Переносим html css  в папку dist (как то  useref сичтывает файлы css и минифицирует их)
 gulp.task("minall", function() {
   return (gulp
       .src("app/*.html")
@@ -162,7 +167,7 @@ gulp.task("minall", function() {
           title: "src"
         })
       )
-      // .pipe(gulpif("*.js", uglify())) // не минифицирует по стандарту es6
+      //.pipe(gulpif("*.js", uglify())) // не минифицирует по стандарту es6
       .on("error", function(err) {
         gutil.log(gutil.colors.red("[Error]"), err.toString());
       })
