@@ -12,7 +12,7 @@ import sliderInit from "./slider";
 const md = new MobileDetect(window.navigator.userAgent);
 
 // создание нового объекта от конструктора OnaPageScroll
-console.log(OnePageScroll);
+
 let OPS = new OnePageScroll(
   {
     querySelectorWrapper: ".wrapper",
