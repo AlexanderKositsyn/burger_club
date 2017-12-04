@@ -3,7 +3,8 @@ export default function feedsInit(modalOpen) {
   // иницализуруем у каждого объекта dotdotdot с параметрами
   $(".feeds__desc").each((index, item) => {
     $(item).dotdotdot({
-      keep: ".feeds__more-info"
+      keep: ".feeds__more-info",
+      watch: "window"
     });
   });
 

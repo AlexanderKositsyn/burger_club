@@ -98,10 +98,10 @@ body {
   height: 1px;
   height: 100%;
   @include tablet {
-    // min-height: 1024px;
+    min-height: initial;
   }
   @include mobile {
-    // min-height: 800px;
+    min-height: initial;
   }
 }
 
