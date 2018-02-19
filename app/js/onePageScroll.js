@@ -67,7 +67,7 @@ export default function OnePageScroll(options = {}, md) {
 
   // функция которая перемещает слайды в зависимоти от index
   this.moveTo = index => {
-    this.OPSList.style.top = -index * 100 + "%";
+    this.OPSList.style.transform = `translateY(${-index * 100 + "%"})`;
   };
 
   // функция изменения активного класса на секциях слайдера

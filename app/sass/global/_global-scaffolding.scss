@@ -84,8 +84,10 @@ body {
   right: 0;
   top: 0;
   background-color: #414141;
-  transition: top 1s;
+  transition: transform 1s;
   height: 100%;
+  will-change: transform;
+  transform: translateY(0);
   &--active-menu {
     position: static;
   }
