@@ -79,10 +79,8 @@ body {
 }
 
 .maincontent {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
+  width: 100%;
+
   background-color: #414141;
   transition: transform 1s;
   height: 100%;

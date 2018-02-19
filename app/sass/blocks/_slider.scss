@@ -37,7 +37,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    transition: left 0.5s;
+    transform: translateX(0);
+    transition: transform 0.5s;
     display: flex;
   }
   &__item {

@@ -8,7 +8,6 @@
     flex: 0 0 25%;
     overflow: hidden;
     &:hover .feeds__hided {
-      visibility: visible;
       display: flex;
       flex-direction: column;
       opacity: 1;
@@ -28,7 +27,6 @@
     position: relative;
   }
   &__hided {
-    visibility: hidden;
     position: absolute;
     top: 0;
     bottom: 0;

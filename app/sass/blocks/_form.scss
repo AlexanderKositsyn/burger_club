@@ -71,7 +71,7 @@
     .form__input {
       width: auto;
       position: absolute;
-      left: -99999px;
+      left: -99px;
       &:checked + .form__radio-fake:after {
         opacity: 1;
       }

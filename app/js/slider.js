@@ -37,7 +37,7 @@ export default function sliderInit(md) {
       .querySelector(".slider__item--active")
       .classList.remove("slider__item--active");
     sliderItems[currnetItem].classList.add("slider__item--active");
-    sliderList.style.left = -currnetItem * 100 + "%";
+    sliderList.style.transform = `translateX(${-currnetItem * 100 + "%"})`;
   };
 
   if (slider) {
